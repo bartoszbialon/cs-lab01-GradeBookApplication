@@ -15,7 +15,12 @@ namespace GradeBook.GradeBooks
     {
         public string Name { get; set; }
         public List<Student> Students { get; set; }
-        public GradeBookType Type { get; set; } //Adding Type property.
+        
+        //Adding Type property.
+        public GradeBookType Type { get; set; } 
+
+        //Adding IsWeighted property to BaseGradeBook.
+        public bool IsWeighted { get; set; }
 
         public BaseGradeBook(string name)
         {
