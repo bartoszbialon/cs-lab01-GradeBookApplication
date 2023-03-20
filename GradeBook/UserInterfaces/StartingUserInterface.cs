@@ -1,4 +1,5 @@
 ﻿using GradeBook.GradeBooks;
+using Microsoft.VisualBasic;
 using System;
 
 namespace GradeBook.UserInterfaces
@@ -31,18 +32,37 @@ namespace GradeBook.UserInterfaces
                 Console.WriteLine("{0} was not recognized, please try again.", command);
         }
 
+        //Updating StartingUserInterface's CreateCommand method.
         public static void CreateCommand(string command)
         {
             var parts = command.Split(' ');
-            if (parts.Length != 2)
+            //Updating CreateCommand's Conditions.
+            if (parts.Length != 3)
             {
-                Console.WriteLine("Command not valid, Create requires a name.");
+                Console.WriteLine("Command not valid, Create requires a name and type of gradebook.");
                 return;
             }
             var name = parts[1];
             BaseGradeBook gradeBook = new BaseGradeBook(name);
             Console.WriteLine("Created gradebook {0}.", name);
             GradeBookUserInterface.CommandLoop(gradeBook);
+
+            //Returning a new GradeBook based on the provided type.
+            if (parts[2] == "standard")
+            {
+                StandardGradeBook gradeBook1 = new StandardGradeBook(name);
+            }
+
+            else if (parts[2] == "ranked")
+            {
+                RankedGradeBook gradeBook2 = new RankedGradeBook(name);
+            }
+
+            else
+            {
+                Console.WriteLine(parts[2] + " is not a supported type of gradebook, please try again");
+                return;
+            }
         }
 
         public static void LoadCommand(string command)
