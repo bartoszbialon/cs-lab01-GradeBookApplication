@@ -10,7 +10,8 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace GradeBook.GradeBooks
 {
-    public class BaseGradeBook
+    //Making the BaseGradeBook class abstract.
+    public abstract class BaseGradeBook
     {
         public string Name { get; set; }
         public List<Student> Students { get; set; }

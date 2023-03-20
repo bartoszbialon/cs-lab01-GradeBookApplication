@@ -43,9 +43,9 @@ namespace GradeBook.UserInterfaces
                 return;
             }
             var name = parts[1];
-            BaseGradeBook gradeBook = new BaseGradeBook(name);
-            Console.WriteLine("Created gradebook {0}.", name);
-            GradeBookUserInterface.CommandLoop(gradeBook);
+            ////BaseGradeBook gradeBook = new BaseGradeBook(name);
+            //Console.WriteLine("Created gradebook {0}.", name);
+            ////GradeBookUserInterface.CommandLoop(gradeBook);
 
             //Returning a new GradeBook based on the provided type.
             if (parts[2] == "standard")
@@ -82,7 +82,7 @@ namespace GradeBook.UserInterfaces
             GradeBookUserInterface.CommandLoop(gradeBook);
         }
 
-        //Updating StartingUserInterfaces's HelpCommand method
+        //Updating StartingUserInterfaces's HelpCommand method.
         public static void HelpCommand()
         {
             Console.WriteLine();
