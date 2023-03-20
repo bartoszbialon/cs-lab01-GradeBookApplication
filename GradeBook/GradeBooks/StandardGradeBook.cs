@@ -12,7 +12,7 @@ namespace GradeBook.GradeBooks
         //Creating StandardGradeBook constructor with name parameter which calls the constructor of the inherited class - base(name)
         public StandardGradeBook(string name) : base(name)
         {
-            Type = GradeBookType.Standard;
+            Type = Enums.GradeBookType.Standard;
         }
     }
 }
