@@ -22,8 +22,10 @@ namespace GradeBook.GradeBooks
         //Adding IsWeighted property to BaseGradeBook.
         public bool IsWeighted { get; set; }
 
-        public BaseGradeBook(string name)
+        //Refactoring constructor of BaseGradeBook.
+        public BaseGradeBook(string name, bool IsWeighted)
         {
+            this.IsWeighted = IsWeighted;
             Name = name;
             Students = new List<Student>();
         }

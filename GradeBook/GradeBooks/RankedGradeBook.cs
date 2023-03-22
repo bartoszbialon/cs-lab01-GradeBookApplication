@@ -8,7 +8,8 @@ namespace GradeBook.GradeBooks
     public class RankedGradeBook : BaseGradeBook
     {
         //Creating RankedGradeBook constructor with name parameter which calls the constructor of the inherited class - base(name).
-        public RankedGradeBook(string name) : base(name)
+        //Refactoring constructor of RankedGradeBook.
+        public RankedGradeBook(string name, bool IsWeighted) : base(name, IsWeighted)
         {
             Type = Enums.GradeBookType.Ranked;
         }
